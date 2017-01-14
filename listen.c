@@ -60,19 +60,6 @@ void PubNubInit ()
                         /* pubnub_callbacks data */ _sync);
 
 }
-void led()
-{
-        wiringPiSetup();
-        pinMode(8,OUTPUT);
-//        while(1)
-//      {
-                digitalWrite(8,LOW);
-                delay(1000);
-                digitalWrite(8,HIGH);
-                delay(1000);
-//      }
-}
-
 
 int main(void)
 {
@@ -81,6 +68,6 @@ int main(void)
 	readbuff = readPubnub ();
 
 	rintf ("readbuff = %s\n",readbuff);
-//	rintf ("readbuff = %s\n",readbuff);
+	
 }
 
