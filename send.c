@@ -8,8 +8,8 @@
 #include "pubnub.h"
 #include "pubnub-sync.h"
 
-#define PUBLISH_KEY "pub-c-c2dd8f3a-5638-4324-adb5-1ffe93325c6a"
-#define SUBSCRIBE_KEY "sub-c-ebacbb1e-d8b8-11e6-9a5d-02ee2ddab7fe"
+#define PUBLISH_KEY "Write Here"
+#define SUBSCRIBE_KEY "Write Here"
 
 /* Declaration of PubNub Variables */
 struct pubnub_sync *_sync;
@@ -26,7 +26,7 @@ int writePubnub (char *mymsg)
 
 /* 1 */	pubnub_publish(
 			/* struct pubnub */ p,
-			/* channel name*/ "Red",
+			/* channel name*/ "my_channel",
 			/* message */ msg,
 			/* default timeout */ -1,
 			/* callback; sync needs NULL! */ NULL,
@@ -47,7 +47,7 @@ int readPubNubHistory ()
 
 	pubnub_history(
 			/* struct pubnub */ p,
-			/* channel */ "Red",
+			/* channel */ "my_channel",
 			/* messages */ 10,
 			/* default timeout */ -1,
 			/* callback; sync needs NULL! */ NULL,
