@@ -1,0 +1,25 @@
+CUSTOM_CFLAGS=-Wall -ggdb3 -O3
+
+SYS_CFLAGS=-std=gnu99 `pkg-config --cflags libpubnub`
+#LIBS=`pkg-config --libs libpubnub`
+DEBUG	= -O3
+CC	= gcc
+INCLUDE	= -I/usr/local/include
+CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
+FLAGS	= -L/home/pi/WiringPi-master/wiringPi
+LIBS    = -lwiringPi -lwiringPiDev -lpthread `pkg-config --libs libpubnub` -lm
+
+OBJS=listen.o
+
+all: listen
+
+listen: listen.o
+	$(call cmd,link)
+
+clean:
+	rm -f *.o listen
+
+install:
+
+-include ../../Makefile.lib
+
