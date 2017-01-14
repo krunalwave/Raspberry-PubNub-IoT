@@ -10,9 +10,8 @@
 #include "pubnub.h"
 #include "pubnub-sync.h"
 
-#define PUBLISH_KEY "pub-c-c2dd8f3a-5638-4324-adb5-1ffe93325c6a"
-#define SUBSCRIBE_KEY "sub-c-ebacbb1e-d8b8-11e6-9a5d-02ee2ddab7fe"
-
+#define PUBLISH_KEY "Write Here"
+#define SUBSCRIBE_KEY "Write Here"
 
 
 struct pubnub_sync *_sync;
@@ -24,7 +23,7 @@ char *buff;
 char * readPubnub ()
 {
 	/* Subscribe */
-/* 1 */		const char *channels[] = { "Red", "demo_channel" };
+/* 1 */		const char *channels[] = { "my_channel", "demo_channel" };
 /* 2 */		pubnub_subscribe_multi(
 				/* struct pubnub */ p,
 				/* list of channels */ channels,
@@ -81,12 +80,7 @@ int main(void)
 	PubNubInit ();
 	readbuff = readPubnub ();
 
-	if(strcmp(readbuff,"buzon") != 0)
-	{
-	led();
-	printf ("Buzon\n");
-	}
-
-//	printf ("readbuff = %s\n",readbuff);
+	rintf ("readbuff = %s\n",readbuff);
+//	rintf ("readbuff = %s\n",readbuff);
 }
 
